@@ -1,7 +1,7 @@
 # Ache seu elemento!
 
 Uma aplicação de console feita em python, com o objetivo de fazer pequenas consultas sobre elementos químicos.
-https://imgur.com/a/KSa0sBK
+![Amostra](https://imgur.com/a/KSa0sBK)
 
 ## Módulos utilizados
 - Unicodedata
