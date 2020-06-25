@@ -25,10 +25,10 @@ while True:
         print("Opção inválida!")
         continue
 
-        dados = f.retorna_dados_elemento(elemento,search)
-        nome = f.traduzir(dados['name'],"pt")
-        grupo = f.traduzir(dados['groupBlock'],"pt")
-        estado = f.traduzir(dados['standardState'],"pt")
+    dados = f.retorna_dados_elemento(elemento,search)
+    nome = f.traduzir(dados['name'],"pt")
+    grupo = f.traduzir(dados['groupBlock'],"pt")
+    estado = f.traduzir(dados['standardState'],"pt")
 
     try:
         print("\n+-----------------------------------------------------+")
@@ -48,7 +48,7 @@ while True:
         elif continuar == "sim": 
             pass
         else:
-            print("Opção não encontrada. Reiniciando aplicação.")
+            print("Opção não encontrada. Reiniciando aplicação")
 
         
         
