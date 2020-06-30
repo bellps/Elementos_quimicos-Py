@@ -11,8 +11,13 @@ while True:
         search = "atomicname"
 
     elif option==2:
-        elemento = int((input("Digite o número atômico do elemento: ")))
-        search = "atomicnumber"
+        try:
+           elemento = int((input("Digite o número atômico do elemento: ")))
+        except Exception as ex:
+            print("Erro: ",ex)
+            continue
+        else:
+            search = "atomicnumber"
 
     elif option==3:
         elemento = (input("Digite o símbolo do elemento: "))
@@ -25,18 +30,20 @@ while True:
         print("Opção inválida!")
         continue
 
-    dados = f.retorna_dados_elemento(elemento,search)
-    nome = f.traduzir(dados['name'],"pt")
-    grupo = f.traduzir(dados['groupBlock'],"pt")
-    estado = f.traduzir(dados['standardState'],"pt")
-
     try:
-        print("\n+-----------------------------------------------------+")
-        print("Elemento escolhido: {} \nSímbolo do elemento: {} \nNúmero atômico: {} \nMassa atômica: {} \nGrupo: {} \nEstado físico na temperatura ambiente: {}".format(nome, dados['symbol'], dados['atomicNumber'], dados['atomicMass'], grupo, estado))
-        print("+-----------------------------------------------------+")
+        dados = f.retorna_dados_elemento(elemento,search)
 
     except Exception:
+        print("\n+-----------------------------------------------------+")
         print("|              Elemento não encontrado                |")
+        print("+-----------------------------------------------------+")
+
+    else:
+        nome = f.traduzir(dados['name'],"pt")
+        grupo = f.traduzir(dados['groupBlock'],"pt")
+        estado = f.traduzir(dados['standardState'],"pt")
+        print("\n+-----------------------------------------------------+")
+        print("Elemento escolhido: {} \nSímbolo do elemento: {} \nNúmero atômico: {} \nMassa atômica: {} \nGrupo: {} \nEstado físico na temperatura ambiente: {} \nDistribuição eletrônica: {}".format(nome, dados['symbol'], dados['atomicNumber'], dados['atomicMass'], grupo, estado, dados['distribuicao']))
         print("+-----------------------------------------------------+")
 
     finally:
